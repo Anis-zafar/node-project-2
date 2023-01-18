@@ -29,7 +29,7 @@ const authentication = async (req, res, next) => {
       const token = header[1];
   
       const decode = jwt.verify(token, "iamsoftwareeng");
-  
+   
       const user = await Users.findOne({ id: decode.id });
   
       req.user = user;
